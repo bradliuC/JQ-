@@ -1,5 +1,3 @@
-<body>
-<style>
 .upload_file_area{
     background: url("http://static-source.toulemei.com/admin/images/error/img_add.png") no-repeat;
     position: relative; width: 80px; height: 80px;
@@ -11,16 +9,3 @@
 
 }
 .upload_file_area img{ width: 100%; height: 100%;}
-</style>
-
-<div class="upload_file_area"></div>
-
-</body>
-<script>
-
-    window.onload=function(){
-        $('.upload_file_area').creat_file_input('name0','id0','http://e.hiphotos.baidu.com/news/q%3D100/sign=1682a63eb6096b6387195a503c328733/4a36acaf2edda3cc601dd93109e93901213f9221.jpg');
-
-    }
-
-</script>

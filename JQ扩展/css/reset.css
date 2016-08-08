@@ -1,0 +1,51 @@
+html,body,ul,li,dl,dt,dd,td,h1,h2,h3,h4,h5,h6,em,span,a,i,p,input,img,samp,td,th{
+    margin: 0; padding: 0; list-style: none; font-style: normal; vertical-align: bottom;
+    box-shadow: none; border: none; font-weight: 300; outline: none; box-shadow: none;color: inherit;  text-decoration: none;
+    word-break : break-all;
+
+}
+html,body{
+    height: 100%;
+}
+.box{
+    display: flex;
+    display:-webkit-flex;
+    display:-moz-box; /* Firefox */
+    display:-webkit-box; /* Safari and Chrome */
+    -moz-box-orient:vertical;
+    -webkit-box-orient:vertical;
+    height: 100%;
+}
+.box_h{
+    display: flex;
+    display:-webkit-flex;
+    display:-moz-box; /* Firefox */
+    display:-webkit-box; /* Safari and Chrome */
+    -moz-box-orient:horizontal;
+    -webkit-box-orient:horizontal;
+    width: 100%;
+}
+.flex1{
+    -moz-box-flex:1.0; /* Firefox */
+    -webkit-box-flex:1.0; /* Safari and Chrome */
+
+    box-flex:1.0;
+}
+.flex2{
+    -moz-box-flex:2.0; /* Firefox */
+    -webkit-box-flex:2.0; /* Safari and Chrome */
+
+    box-flex:2.0;
+}
+.flex3{
+    -moz-box-flex:3.0; /* Firefox */
+    -webkit-box-flex:3.0; /* Safari and Chrome */
+    overflow: hidden;
+    box-flex:3.0;
+}
+.flex4{
+    -moz-box-flex:4.0; /* Firefox */
+    -webkit-box-flex:4.0; /* Safari and Chrome */
+
+    box-flex:4.0;
+}

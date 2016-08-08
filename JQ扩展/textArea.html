@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.13.1.js"></script>
+    <style>
+
+        .myCreatTextArea{
+            width: 200px; height: 80px; border: 1px solid #ccc; outline: none;
+        }
+    </style>
+</head>
+<body>
+<div class="myCreatTextArea"></div>
+<script>
+    jQuery.fn.extend({
+        creat_textArea: function (name,style,maxLength,callback,startString) {
+            var _this = this;
+            var defautStyle ={width:200, height:80};
+            $.extend(defautStyle, style);
+            _this.css({'width':defautStyle.width+'px','height':defautStyle.height+'px'});
+            var myTextArea = document.createElement('textarea');
+            var h4 = document.createElement('h4');
+            h4.style.height='30px';
+            h4.style.padding='0 10px';
+            h4.style.margin='0';
+            h4.style.lineHeight='30px';
+            h4.style.fontSize='12px';
+            h4.style.textAlign='right';
+            myTextArea.maxLength=maxLength;
+            myTextArea.name=name;
+            myTextArea.style.resize='none';
+            myTextArea.style.border='none';
+            myTextArea.style.background='none';
+            myTextArea.style.outline='none';
+            myTextArea.style.width=defautStyle.width-20+'px';
+            myTextArea.style.margin='10px 10px 0';
+            myTextArea.style.height=defautStyle.height-40+"px";
+            h4.innerHTML='0/'+maxLength;
+            _this.append(myTextArea);
+            _this.append(h4);
+            myTextArea.oninput=function(){
+                if(this.value.length > maxLength){
+                    callback();
+                }else{
+                    h4.innerHTML=this.value.length+"/"+maxLength
+                }
+            }
+            if(startString){
+                myTextArea.innerHTML = startString;
+            }
+
+        }
+    })
+    $(function(){
+        $('.myCreatTextArea').creat_textArea('textareaName',{width:400,height:100},10,function(){
+            alert('最多只能输入100个字')
+        },'adasdasdasdasd');
+    })
+</script>
+</body>
+</html>

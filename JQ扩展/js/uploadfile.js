@@ -1,3 +1,7 @@
+/**
+ * Created by liu on 16/6/1.
+ */
+
 jQuery.fn.extend({
     creat_file_input: function (name,id,imgsrc) {
         var _this = this;

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="test">
+    <li>xxxxxxx</li>
+    <li>xxxxxxx</li>
+    <li>xxxxxxx</li>
+    <li>xxxxxxx</li>
+    <li>xxxxxxx</li>
+    <li>xxxxxxx</li>
+</ul>
+<script>
+    window.onload=function(){
+        var oli = document.getElementById('test').getElementsByTagName('li');
+        for(var i =0; i<5;i++){
+            oli[i].onclick=(function(f){
+
+                return function(){alert(f);}
+            })(i)
+        }
+    }
+
+</script>
+</body>
+</html>

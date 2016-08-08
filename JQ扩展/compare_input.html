@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-1.13.1.js"></script>
+</head>
+<body>
+<input type="text" id="sex_man">
+<input type="text" id="sex_woman">
+<input type="text" id="sex_wo">
+<script>
+
+    function compare_input(id_list,max_all_value){
+        var len = id_list.length;
+        for(var i=0;i<len;i++){
+            $('#'+id_list[i]).keyup(function(){
+                var all_value =0;
+                this.value = this.value.replace(/[^\d]/g, ""); //清除"数字"以外的字符
+                for(var j=0;j<len;j++){
+                    all_value += $('#'+id_list[j]).val()-0;
+                }
+
+                var this_max = this.value-0+max_all_value - all_value;
+                console.log(this_max+","+max_all_value+","+all_value)
+                if(this.value > this_max){
+                    this.value = this_max;
+                }
+            })
+
+        }
+    }
+    compare_input(['sex_man','sex_woman'],100)
+</script>
+
+</body>
+</html>
